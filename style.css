@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600;800&display=swap');
+
+/* --- RÉINITIALISATION & FOND --- */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8fcf8;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container, .container-text {
+    max-width: 1100px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* --- TITRES DE SECTIONS --- */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 2.2em;
+    color: #2e7d32; /* Vert foncé Agri */
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #ffb300; /* Orange Money */
+    display: inline-block;
+    width: auto;
+    max-width: 90%;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #4caf50; /* Vert principal */
+}
+
+/* --- 1. HEADER (ENTÊTE) --- */
+.main-header {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* L'entête reste visible en haut */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6em;
+    font-weight: 800;
+    color: #388e3c;
+    display: flex;
+    align-items: center;
+}
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 25px;
+    font-weight: 500;
+}
+.btn-cta-small {
+    background-color: #ffb300;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+/* --- 2. HERO SECTION --- */
+.hero-section {
+    width: 100%;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    color: white;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    border-bottom: none;
+}
+
+.tagline {
+    font-size: 1.4em;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+.btn-cta-main {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white !important;
+    padding: 18px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-cta-main:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+/* --- 3. SECTION ABOUT MOH --- */
+.about-moh-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 2;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.about-text strong {
+    color: #4caf50;
+    font-weight: 700;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.moh-photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #ffb300;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 4. SECTION PROGRAMME --- */
+.programme-section {
+    background-color: #e8f5e9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.grid-item {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-bottom: 5px solid #4caf50;
+    text-align: left;
+}
+
+/* --- 5. SECTION INSCRIPTION ET PAIEMENT --- */
+.paiement-section {
+    padding: 60px 0;
+    background-color: #fffde7; 
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: 40px;
+    border: 2px solid #ffb300;
+}
+
+.form-content {
+    flex: 1;
+    border-right: 1px solid #eee;
+    padding-right: 30px;
+}
+
+.form-content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+.form-content ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.form-content ul li::before {
+    content: '⭐';
+    position: absolute;
+    left: 0;
+}
+
+.highlight {
+    font-weight: 700;
+    color: #ffb300;
+}
+
+.form-container {
+    flex: 1;
+    padding-left: 30px;
+}
+
+.paiement-info {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.montant, .numero-om {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #ffb300;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.attention {
+    color: #c62828;
+    font-weight: bold;
+}
+
+.form-title {
+    font-size: 1.8em;
+    color: #388e3c;
+    margin-top: 0;
+}
+
+/* Styles du formulaire */
+form label { margin-top: 15px; font-weight: 700; color: #444; }
+form input { padding: 12px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1em; width: 100%; box-sizing: border-box; }
+form input:focus { border-color: #4caf50; outline: none; }
+
+.btn-confirmer {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.3em;
+    margin-top: 25px;
+    font-weight: 700;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-confirmer:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+}
+
+/* --- 6. FOOTER --- */
+.main-footer {
+    width: 100%;
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.95em;
+    margin-top: 0; 
+}
+
+/* --- RÉACTIVITÉ MOBILE --- */
+@media (max-width: 900px) {
+    .main-header {
+        padding: 15px 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .about-content, .form-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .about-text, .about-image {
+        flex: auto;
+    }
+    .about-image {
+        order: -1;
+    }
+    .form-content {
+        padding-right: 0;
+        border-right: none;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #eee;
+    }
+    .form-container {
+        padding-left: 0;
+    }
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-header {
+        flex-direction: column;
+    }
+    .nav-menu {
+        margin-top: 10px;
+    }
+    .nav-menu a {
+        margin: 0 8px;
+    }
+    .btn-cta-small {
+        margin-left: 10px;
+    }
+    .hero-section {
+        height: 300px;
+    }
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+    .tagline {
+        font-size: 1.1em;
+    }
+    .btn-cta-main {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
+}
