@@ -39,7 +39,7 @@
                     <p>Rejoignez-nous et bénéficiez de l'expérience qui fait la différence entre une récolte moyenne et un rendement record !</p>
                 </div>
                 <div class="about-image">
-                    <img src="IMG1.jpg" alt="Portrait de Moh, l'instructeur" class="moh-photo"> </div>
+                    <img src="img1.jpg" alt="Portrait de Moh, l'instructeur" class="moh-photo"> </div>
             </div>
         </div>
     </section>
@@ -89,22 +89,57 @@
                     <h3 class="form-title">Étape 2 : Confirmez Votre Paiement OM</h3>
                     <p class="form-description">Remplissez ce formulaire APRÈS avoir effectué le transfert pour recevoir le lien d'accès.</p>
 
-                    <form action="mailto:Mohameddembe6@gmail.com?subject=Confirmation%20Paiement%20Formation%20Pomme%20de%20Terre" method="post" enctype="text/plain">
-                        
-                        <label for="nom">Nom & Prénoms :</label>
-                        <input type="text" id="nom" name="Nom et Prénoms" required>
-                        
-                        <label for="pays">Votre Pays :</label>
-                        <input type="text" id="pays" name="Pays" required>
+                    <form id="whatsappForm">
+    
+    <label for="nom">Nom & Prénoms :</label>
+    <input type="text" id="nom" name="Nom et Prénoms" required>
+    
+    <label for="pays">Votre Pays :</label>
+    <input type="text" id="pays" name="Pays" required>
 
-                        <label for="telephone-expediteur">Numéro de Téléphone (Expéditeur OM) :</label>
-                        <input type="tel" id="telephone-expediteur" name="Telephone Expediteur" placeholder="+223xxxxxxxx" required>
-                        
-                        <label for="reference">Référence de Transaction OM ou Heure d'Envoi :</label>
-                        <input type="text" id="reference" name="Reference de Transaction" required>
-                        
-                        <button type="submit" class="btn-confirmer">Confirmer Mon Paiement & Recevoir l'Accès</button>
-                    </form>
+    <label for="telephone-expediteur">Numéro de Téléphone (Expéditeur OM) :</label>
+    <input type="tel" id="telephone-expediteur" name="Telephone Expediteur" placeholder="+223xxxxxxxx" required>
+    
+    <label for="reference">Référence de Transaction OM ou Heure d'Envoi :</label>
+    <input type="text" id="reference" name="Reference de Transaction" required>
+    
+    <button type="button" class="btn-confirmer" onclick="sendWhatsApp()">Confirmer Mon Paiement & Recevoir l'Accès</button>
+</form>
+
+<script>
+    function sendWhatsApp() {
+        // 1. Définir votre numéro WhatsApp (y compris l'indicatif international, sans le signe +)
+        const recipientNumber = "22371002640"; // REMPLACEZ PAR VOTRE NUMÉRO (ex: 22376123456)
+        
+        // 2. Récupérer les valeurs du formulaire
+        const nom = document.getElementById('nom').value;
+        const pays = document.getElementById('pays').value;
+        const telephone = document.getElementById('telephone-expediteur').value;
+        const reference = document.getElementById('reference').value;
+
+        // 3. Validation simple pour s'assurer que tous les champs sont remplis
+        if (!nom || !pays || !telephone || !reference) {
+            alert("Veuillez remplir tous les champs du formulaire avant de confirmer le paiement.");
+            return; // Arrête la fonction si un champ est vide
+        }
+
+        // 4. Construction du message pré-rempli (encodage URI pour les espaces et caractères spéciaux)
+        const message = encodeURIComponent(
+            "✅ Confirmation de Paiement Formation Pomme de Terre \n\n" +
+            "👤 Nom & Prénoms: " + nom + "\n" +
+            "🌍 Pays: " + pays + "\n" +
+            "📞 Numéro Expéditeur: " + telephone + "\n" +
+            "🔑 Référence OM/Heure: " + reference + "\n\n" +
+            "Merci de valider mon accès au groupe privé !"
+        );
+
+        // 5. Construction du lien WhatsApp (utilisation de l'API web ou mobile)
+        const whatsappURL = `https://wa.me/${recipientNumber}?text=${message}`;
+
+        // 6. Redirection vers WhatsApp
+        window.location.href = whatsappURL;
+    }
+</script>
                 </div>
             </div>
         </div>
