@@ -379,3 +379,25 @@ form input:focus { border-color: #4caf50; outline: none; }
         padding: 12px 25px;
     }
 }
+/* --- NOUVEAUX STYLES POUR LE PRIX BARRÉ (Ajouter/Vérifier dans styles.css) --- */
+
+.prix-promo {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 15px; 
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.ancien-prix {
+    color: #a0a0a0; /* Couleur grise */
+    font-size: 1.5em; 
+    /* LA LIGNE CLÉ POUR LE TRAIT BARRÉ : */
+    text-decoration: line-through; 
+    font-weight: 400; 
+}
+
+.montant {
+    font-size: 2.5em; 
+}
